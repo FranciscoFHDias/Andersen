@@ -1,5 +1,5 @@
 from django.db import models
-
+from jwt_auth.models import User
 # Create your models here.
 
 class Partner(models.Model):
@@ -18,6 +18,7 @@ class Referral(models.Model):
 class Client(models.Model):
     name = models.CharField(max_length=50)
     stage = models.CharField(max_length=50)
-    value = models.CharField(max_length=200)
+    value = models.IntegerField()
     partner = models.ForeignKey(Partner, related_name='clients', on_delete=models.CASCADE)
     referral = models.ManyToManyField(Referral, related_name='clients')
+    user = models.ForeignKey(User, related_name='clients')
