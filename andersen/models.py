@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Partner(models.Model):
@@ -24,6 +25,7 @@ class Client(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     partner = models.ForeignKey(Partner, related_name='clients', on_delete=models.CASCADE)
     referral = models.ForeignKey(Referral, related_name='clients', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name='exercises', on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.name}, stage {self.stage} worth {self.value}'
