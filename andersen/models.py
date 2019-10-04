@@ -25,7 +25,7 @@ class Client(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     partner = models.ForeignKey(Partner, related_name='clients', on_delete=models.CASCADE)
     referral = models.ForeignKey(Referral, related_name='clients', on_delete=models.CASCADE)
-    user = models.ForeignKey(User, related_name='exercises', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name='clients', on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.name}, stage {self.stage} worth {self.value}'
