@@ -26,4 +26,4 @@ class ClientReadSerializer(ClientCreateSerializer):
     referral = ReferralSerializer()
 
     class Meta(ClientCreateSerializer.Meta):
-        fields = ('id', 'name', 'stage', 'value', 'priority', 'partner', 'referral', 'user', 'created_at', 'updated_at')
+        fields = ('id', 'name', 'stage', 'value', 'priority', 'partner', 'referral', 'user', 'created_at', 'updated_at',)

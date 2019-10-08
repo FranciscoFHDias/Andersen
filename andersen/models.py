@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 class Partner(models.Model):
     name = models.CharField(max_length=50)
+    user = models.ForeignKey(User, related_name='partners', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -12,6 +13,7 @@ class Partner(models.Model):
 class Referral(models.Model):
     company = models.CharField(max_length=50)
     name = models.CharField(max_length=50)
+    user = models.ForeignKey(User, related_name='referrals', on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.name} at {self.company}'
