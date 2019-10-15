@@ -12,7 +12,7 @@ const Line = ({ ...client }) => {
       <td>{client.priority}</td>
       <td>{client.partner.name}</td>
       <td>{client.referral.company}</td>
-      <td>{client.created_at}</td>
+      <td>{client.created_at.slice(0, 10)}</td>
     </tr>
   )
 }
