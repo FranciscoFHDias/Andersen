@@ -3,7 +3,4 @@ __pycache__/
 .env
 venv/
 frontend/dist
-
-# SQLite database files
-
 *.sqlite3

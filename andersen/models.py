@@ -1,5 +1,4 @@
 from django.db import models
-from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import User
 # Create your models here.
 
@@ -22,7 +21,7 @@ class Client(models.Model):
     name = models.CharField(max_length=50)
     stage = models.CharField(max_length=50)
     value = models.IntegerField()
-    priority = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(2)])
+    priority = models.CharField(max_length=50)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     partner = models.ForeignKey(Partner, related_name='clients', on_delete=models.CASCADE)

@@ -20,36 +20,29 @@ class ClientsIndex extends React.Component {
 
   render() {
     return(
-      <table className="table">
-        <thead>
-          <tr>
-            <th><abbr title="Name">Name</abbr></th>
-            <th><abbr title="Stage">Stage</abbr></th>
-            <th><abbr title="Value">Value</abbr></th>
-            <th><abbr title="Priority">Priority</abbr></th>
-            <th><abbr title="Partner">Partner</abbr></th>
-            <th><abbr title="Referral Source">Referral Source</abbr></th>
-            <th><abbr title="Date">Date</abbr></th>
-          </tr>
-        </thead>
-        <tfoot>
-          <tr>
-            <th><abbr title="Name">Name</abbr></th>
-            <th><abbr title="Stage">Stage</abbr></th>
-            <th><abbr title="Value">Value</abbr></th>
-            <th><abbr title="Priority">Priority</abbr></th>
-            <th><abbr title="Partner">Partner</abbr></th>
-            <th><abbr title="Referral Source">Referral Source</abbr></th>
-            <th><abbr title="Date">Date</abbr></th>
-          </tr>
-        </tfoot>
-        <tbody>
-          {!this.state.clients && <h2>Loading...</h2>}
-          {this.state.clients.map(client =>
-            <Line key={client.id} {...client} />
-          )}
-        </tbody>
-      </table>
+      <div className="section">
+        <div className="container">
+          <table className="table is-fullwidth">
+            <thead>
+              <tr>
+                <th title="Name">Name</th>
+                <th title="Stage">Stage</th>
+                <th title="Value">Value</th>
+                <th title="Priority">Priority</th>
+                <th title="Partner">Partner</th>
+                <th title="Referral Source">Referral Source</th>
+                <th title="Date">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {!this.state.clients && <h2>Loading...</h2>}
+              {this.state.clients.map(client =>
+                <Line key={client.id} {...client} />
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
     )
   }
 }
